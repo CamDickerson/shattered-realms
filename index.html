@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Shattered Realms</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game"></canvas>
+  <div id="scan"></div>
+  <div id="ui">
+    <section class="screen" id="title">
+      <h1>SHATTERED<br><span>REALMS</span></h1>
+      <div class="menu">
+        <button data-a="start">Start Game</button>
+        <button data-a="continue" id="btnCont">Continue</button>
+        <button data-a="controls">Controls</button>
+        <button data-a="settings">Settings</button>
+        <button data-a="credits">Credits</button>
+      </div>
+    </section>
+    <section class="screen" id="intro">
+      <h2>The Fallen World</h2>
+      <p>You wake alone among ruins where vines have swallowed ancient machines. The world has cracked apart, and its Core is bleeding energy into everything.</p>
+      <p>Gather energy crystals, fight the corrupted guardians, and descend through the Neon Depths to the Shattered Core. Defeat the Core Guardian to escape.</p>
+      <button data-a="begin">Begin</button>
+    </section>
+    <section class="screen" id="controls">
+      <h2>Controls</h2>
+      <p>Move: A / D or Arrow Keys<br>Jump: Space, W or Up (hold = higher)<br>Attack: J or X<br>Interact / open chests: E<br>Pause: Esc &nbsp; Mute: M<br>Touch: on-screen buttons</p>
+      <button data-a="back">Back</button>
+    </section>
+    <section class="screen" id="settings">
+      <h2>Settings</h2>
+      <label>Volume <input type="range" id="vol" min="0" max="100"></label>
+      <label><input type="checkbox" id="mute"> Mute</label>
+      <label><input type="checkbox" id="shake"> Screen shake</label>
+      <label><input type="checkbox" id="scanl"> Scanlines</label>
+      <button data-a="back">Back</button>
+    </section>
+    <section class="screen" id="credits">
+      <h2>Credits</h2>
+      <p>Shattered Realms<br>All art, code and sound generated in-browser.<br>Built with HTML5 Canvas and the Web Audio API.</p>
+      <button data-a="back">Back</button>
+    </section>
+    <section class="screen" id="pause">
+      <h2>Paused</h2>
+      <div class="menu">
+        <button data-a="resume">Resume</button>
+        <button data-a="restart">Restart Level</button>
+        <button data-a="controls">Controls</button>
+        <button data-a="settings">Settings</button>
+        <button data-a="title">Quit to Title</button>
+      </div>
+    </section>
+    <section class="screen" id="over">
+      <h2 class="red">Game Over</h2>
+      <p>Crystals collected: <b id="oCr">0</b></p>
+      <div class="menu">
+        <button data-a="restart">Retry Level</button>
+        <button data-a="title">Title Screen</button>
+      </div>
+    </section>
+    <section class="screen" id="win">
+      <h2>Victory!</h2>
+      <p>The Core falls silent and the path home opens.<br>
+      Crystals: <b id="wCr">0</b> &nbsp; Secrets: <b id="wSec">0</b><br>
+      Deaths: <b id="wDe">0</b> &nbsp; Time: <b id="wTi">0</b><br>
+      Score: <b id="wSc">0</b> &nbsp; Best: <b id="wBe">0</b></p>
+      <div class="menu">
+        <button data-a="again">Play Again</button>
+        <button data-a="title">Title Screen</button>
+      </div>
+    </section>
+  </div>
+  <div id="fade"></div>
+</div>
+<div id="touch">
+  <div class="pad"><button id="tL">&#9664;</button><button id="tR">&#9654;</button></div>
+  <button id="tP">II</button>
+  <div class="pad"><button id="tA">&#9876;</button><button id="tJ">&#9650;</button></div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
